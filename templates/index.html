@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<head>
+  <title>OpenAI Quickstart</title>
+  <link
+    rel="shortcut icon"
+    href="{{ url_for('static', filename='dog.png') }}"
+  />
+  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
+</head>
+
+<body>
+  <img src="{{ url_for('static', filename='dog.png') }}" class="icon" />
+  <h3>Click on the pen to enter a prompt.</h3>
+  <div id="wrap">
+  <form action="/" method="post">
+    <input type="text" name="prompt" placeholder="Enter a prompt" required />
+    <!-- <input type="submit" value="Generate AI Response" /> -->
+    <input type="image" id="image" alt="Login"
+       src="/static/pen.png"/>
+  </form>
+  </div>
+  {% if result %}
+  <div class="result">{{ result }}</div>
+  {% endif %}
+</body>
+
+
+<!--<div id="wrap"  onKeyPress="return pr(event)">
+  <form action="AIPrompt" autocomplete="on" method="get">
+  <input id="prompt" name="prompt" type="text" placeholder="Enter Prompt">
+    <input id="open_prompt" value="OpenPrompt" type="open">
+  </form>
+</div>
+
+need to fix type=submit
+type = text works
+functionality works
+conglomerate with rest of CSS
+change icons
+-->
